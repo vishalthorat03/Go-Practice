@@ -66,7 +66,11 @@ func readChunks(filepath string, chunkSize int) ([][]string, error) {
 }
 
 func main() {
-	filepath := "Day-4_log_file_500mb.log"
+	// Ask for the file name
+	fmt.Print("Enter the log file name: ")
+	var filepath string
+	fmt.Scanln(&filepath)
+
 	outputFile := strings.Replace(filepath, ".log", ".json", 1)
 	chunkSize := 1000
 
