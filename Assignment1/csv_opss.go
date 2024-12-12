@@ -141,14 +141,12 @@ func main() {
 	}
 
 	for {
-		fmt.Println("\nOptions: list, query, add, delete, exit")
+		fmt.Println("\nOptions\nquery\nadd\ndelete\nexit")
 		fmt.Print("Enter your choice: ")
 		var choice string
 		fmt.Scanln(&choice)
 
 		switch choice {
-		case "list":
-			ListEntries(entries)
 		case "query":
 			var keyword string
 			fmt.Print("Enter name or criticality to search: ")
@@ -184,8 +182,9 @@ func main() {
 			fmt.Scanln(&fixletID)
 			entries = DeleteEntry(entries, fixletID)
 			WriteCSV(filename, entries)
+			fmt.Printf("\nEntry has been deleted %d", fixletID)
 		case "exit":
-			fmt.Println("Exiting...")
+			fmt.Println("<<Application Closed>>")
 			return
 		default:
 			fmt.Println("Invalid choice. Please try again.")

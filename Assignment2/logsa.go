@@ -16,7 +16,7 @@ type LogEntry struct {
 	Message   string `json:"message"`
 }
 
-var logPattern = regexp.MustCompile(`^(?P<timestamp>\S+) \[(?P<level>[A-Z]+)\] (?P<message>.+)$`)
+var logPattern = regexp.MustCompile(`^(?P<timestamp>\S+) \[(?P<level>[Aa-Z]+)\] (?P<message>.+)$`)
 
 func parseLine(line string) (LogEntry, bool) {
 	matches := logPattern.FindStringSubmatch(line)
